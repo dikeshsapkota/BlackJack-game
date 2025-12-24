@@ -2,17 +2,9 @@
 let hasBlackJack=false;
 let isAlive=true;
 let message="";
- 
-
-function startGame(){
-    let firstCard= Number(document.getElementById("first-Card").value);
-let secondCard= Number(document.getElementById("second-Card").value);
-let sum = firstCard + secondCard;
-//popup displaying cards and sum
-   document.getElementById("cards-El").textContent="cards are"+firstCard + " and " + secondCard;
-    console.log("game started");
-document.getElementById("sum-el").textContent="sum is:"+sum;
-//checking the conditions
+let sum=0;
+  //checking the conditions with function
+function checkGame(){
 if(sum > 21){
    
     message="you are out of the game";
@@ -21,21 +13,35 @@ if(sum > 21){
 else if(sum< 21){
    
     message="do you want to draw a new card";
+    
+    
 }else {
 
     message="wooho!you have got black jack";
     hasBlackJack=true;
    
 }
-
-
 document.getElementById("message-el").textContent="message: " + message;
+}
+
+function startGame(){
+    let firstCard= Number(document.getElementById("first-Card").value);
+let secondCard= Number(document.getElementById("second-Card").value);
+sum = firstCard + secondCard;
+//popup displaying cards and sum
+   document.getElementById("cards-El").textContent="cards are"+firstCard + " and " + secondCard;
+    console.log("game started");
+document.getElementById("sum-el").textContent="sum is:"+sum;
+checkGame();
+
+
 }
 function newGame(){
     //reset game states
    let hasBlackJack=false;
 let isAlive=true;
 let message="";
+sum=0;
 //popup clearing
 
 document.getElementById("cards-El").textContent="";
@@ -46,3 +52,18 @@ document.getElementById("first-Card").value="";
 document.getElementById("second-Card").value="";
  
 }
+function newCard(){
+if (isAlive && !hasBlackJack) {
+    console.log("drawing a new card from the deck");
+        let newCard=3;
+        sum += newCard;
+        document.getElementById("sum-el").textContent="sum is:"+ sum;
+document.getElementById("cards-El").textContent +=" new card is:" + newCard;
+checkGame();}
+
+
+    }
+   
+
+   
+    
