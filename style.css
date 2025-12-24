@@ -9,34 +9,36 @@ h1{
   background-size: cover;
 background-position: center;
   background-repeat: no-repeat;
+
   
 }
 body {
     font-family: Arial, sans-serif;
+    border: #2c75c8;
     background-color: #f4f4f4;
     text-align: center;
-    padding-top: 50px;
+    padding-top: 20px;
 }
 
 
-
-.game {
-    background-color: white;
-    width: 300px;
-    margin: auto;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
 
 p {
+    width: 200px;
     font-size: 18px;
     margin: 12px 0;
-    color: #2c75c8;
+    color: #97c5fa;
+    background-color: #f4f4f4;
+    border: #f4f4f4;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px auto;
+    
 }
 
 button {
     padding: 10px 15px;
     font-size: 16px;
     cursor: pointer;
+    color: rgb(164, 164, 164);
+    background: #90ff28;
 }
