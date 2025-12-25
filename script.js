@@ -10,7 +10,7 @@ function checkGame() {
 
         message = "you are out of the game";
         isAlive = false;
-        newGame();
+        
     }
     else if (sum < 21) {
 
@@ -21,7 +21,7 @@ function checkGame() {
 
         message = "wooho!you have got black jack";
         hasBlackJack = true;
-        newGame();
+        
 
     }
     document.getElementById("message-el").textContent = "message: " + message;
@@ -30,8 +30,8 @@ function checkGame() {
 function startGame() {
 
 
-    firstCard = Number(document.getElementById("first-Card").value);
-    secondCard = Number(document.getElementById("second-Card").value);
+    firstCard = getRandomCard();
+    secondCard = getRandomCard();
     //update cards array
     cards = [firstCard, secondCard];
     sum = firstCard + secondCard;
@@ -46,9 +46,9 @@ function startGame() {
 //resetting the game
 function newGame() {
     //reset game states
-    let hasBlackJack = false;
-    let isAlive = true;
-    let message = "";
+    hasBlackJack = false;
+    isAlive = true;
+    message = "";
     sum = 0;
     //popup clearing
 
