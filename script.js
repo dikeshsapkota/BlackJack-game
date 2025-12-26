@@ -4,12 +4,16 @@ let hasBlackJack = false;
 let isAlive = true;
 let message = "";
 let sum = 0;
-let player={
- playerName:"Dikesh",
- playerChips:145
+
+function showplayer(){
+    let player={
+ playerName: document.getElementById("playername").value,
+ playerChips: document.getElementById("balance").value
 
 }
+    console.log(player);
 document.getElementById("player-el").textContent=player.playerName+": $"+player.playerChips;
+}
 
 
 //checking the conditions with function
