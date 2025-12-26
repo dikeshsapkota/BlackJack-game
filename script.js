@@ -4,6 +4,14 @@ let hasBlackJack = false;
 let isAlive = true;
 let message = "";
 let sum = 0;
+let player={
+ playerName:"Dikesh",
+ playerChips:145
+
+}
+document.getElementById("player-el").textContent=player.playerName+": $"+player.playerChips;
+
+
 //checking the conditions with function
 function checkGame() {
     if (sum > 21) {
@@ -26,7 +34,7 @@ function checkGame() {
     }
     document.getElementById("message-el").textContent = "message: " + message;
 }
-
+//func to start game
 function startGame() {
 
 
@@ -55,9 +63,7 @@ function newGame() {
     document.getElementById("cards-El").textContent = "";
     document.getElementById("sum-el").textContent = "";
     document.getElementById("message-el").textContent = "";
-    //clearing card inputs
-    document.getElementById("first-Card").value = "";
-    document.getElementById("second-Card").value = "";
+    
 
 }
 //drawing new card
@@ -73,10 +79,19 @@ function newCard() {
         checkGame();
     }
 
-
+//random card function
 }
 function getRandomCard() {
-    return Math.floor(Math.random() * 13) + 1;
+    let randoCard = Math.floor(Math.random() * 13) + 1;
+    
+    //cards greater than 10 are 10 and ace or 1 is 11
+    if(randoCard>10){
+        return 10;
+    }
+    if(randoCard===1){
+        return 11;
+    }
+    return randoCard;
 }
 
 
