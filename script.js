@@ -1,13 +1,13 @@
 //cards in array
 let cards = [];
-let hasBlackJack = false;
+let hasBlackJack = false;//boolean at start of game
 let isAlive = true;
 let message = "";
 let sum = 0;
 
 function showplayer(){
     let player={
- playerName: document.getElementById("playername").value,
+ playerName: document.getElementById("playername").value,//input names
  playerChips: document.getElementById("balance").value
 
 }
@@ -72,13 +72,14 @@ function newGame() {
 }
 //drawing new card
 function newCard() {
-    if (isAlive && !hasBlackJack) {
+    if (isAlive && !hasBlackJack) //and operator
+        {
         console.log("drawing a new card from the deck");
         let newCard = getRandomCard();
 
         sum += newCard;
-        cards.push(newCard);
-        document.getElementById("sum-el").textContent = "sum is:" + sum;
+        cards.push(newCard);//pushing new card to array
+        document.getElementById("sum-el").textContent = "sum is:" + sum;//text content is better it includes anything even spaces
         document.getElementById("cards-El").textContent += " " + newCard;
         checkGame();
     }
