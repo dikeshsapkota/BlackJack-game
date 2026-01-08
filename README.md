@@ -37,7 +37,7 @@ Blackjack (21) wins instantly
 
 Deployment:
 
- https://github.com/dikeshsapkota/BlackJack-game.git
+https://dikeshsapkota.github.io/BlackJack-game/
 
 
 
